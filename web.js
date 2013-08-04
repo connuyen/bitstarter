@@ -5,11 +5,9 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   var buf = new Buffer(fs.readFileSync('index.html', 'utf-8'));
   response.send(buf.toString('utf-8'));
-//  response.send('Hello World3!');
-
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
